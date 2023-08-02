@@ -2,11 +2,11 @@ package main
 
 import (
 	"log"
-    "net/http"
+	"net/http"
 )
 
-
 func main() {
-	http.HandleFunc("/order", handleOrders)
+	handlers "github.com/usmangani1/gesprach/service/handlers"
+	http.HandleFunc("/user", handlers.handleUser)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
